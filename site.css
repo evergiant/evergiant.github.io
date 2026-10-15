@@ -4,8 +4,8 @@
   --ink:#0C1623; --muted:#5B6672; --line:#D5DBE2;
   --blue:#145BDB; --blue-ink:#0E47B0; --warn:#9A5B00;
   --navy:#101E2E; --on-dark:#F3F5F7; --on-dark-muted:#A9B5C2; --flux:#8DB7FF;
-  --f-display:'Manrope','Noto Sans TC',system-ui,sans-serif;
-  --f-body:'DM Sans','Noto Sans TC',system-ui,sans-serif;
+  --f-display:'Manrope','PingFang TC','Microsoft JhengHei','Noto Sans TC',system-ui,sans-serif;
+  --f-body:'DM Sans','PingFang TC','Microsoft JhengHei','Noto Sans TC',system-ui,sans-serif;
   --f-mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
@@ -26,10 +26,10 @@ a{color:var(--blue)}
 .site[data-lang="ja"] [lang="en"],.site[data-lang="ja"] [lang="de"],.site[data-lang="ja"] [lang="zh"],.site[data-lang="ja"] [lang="th"],
 .site[data-lang="th"] [lang="en"],.site[data-lang="th"] [lang="de"],.site[data-lang="th"] [lang="zh"],.site[data-lang="th"] [lang="ja"]{display:none!important}
 .site[data-lang="zh"] h1,.site[data-lang="zh"] h2,.site[data-lang="ja"] h1,.site[data-lang="ja"] h2{letter-spacing:.02em}
-.site[data-lang="ja"]{--f-display:'Manrope','Noto Sans JP',system-ui,sans-serif;--f-body:'DM Sans','Noto Sans JP',system-ui,sans-serif}
-.site[data-lang="th"]{--f-display:'Manrope','Noto Sans Thai',system-ui,sans-serif;--f-body:'DM Sans','Noto Sans Thai',system-ui,sans-serif}
-.site[data-lang="ja"] .hlead,.site[data-lang="ja"] .hquote{font-family:'Source Serif 4','Noto Serif JP',Georgia,serif}
-.site[data-lang="th"] .hlead,.site[data-lang="th"] .hquote{font-family:'Source Serif 4','Noto Serif Thai',Georgia,serif}
+.site[data-lang="ja"]{--f-display:'Manrope','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic','Meiryo','Noto Sans JP',system-ui,sans-serif;--f-body:'DM Sans','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic','Meiryo','Noto Sans JP',system-ui,sans-serif}
+.site[data-lang="th"]{--f-display:'Manrope','Thonburi','Leelawadee UI','Leelawadee','Noto Sans Thai',system-ui,sans-serif;--f-body:'DM Sans','Thonburi','Leelawadee UI','Leelawadee','Noto Sans Thai',system-ui,sans-serif}
+.site[data-lang="ja"] .hlead,.site[data-lang="ja"] .hquote{font-family:'Source Serif 4','Hiragino Mincho ProN','Yu Mincho','Noto Serif JP',Georgia,serif}
+.site[data-lang="th"] .hlead,.site[data-lang="th"] .hquote{font-family:'Source Serif 4','Thonburi','Leelawadee UI','Leelawadee','Thonburi','Leelawadee UI','Leelawadee','Noto Sans Thai',Georgia,serif}
 .site[data-lang="th"]{line-height:1.8}
 .wrap{max-width:1200px;margin:0 auto;padding-inline:24px}
 h1,h2,h3,h4{font-family:var(--f-display);margin:0;text-wrap:balance;line-height:1.25}
@@ -287,7 +287,7 @@ ol.chain li.us .stg,ol.chain li.us b{color:#fff}
 /* Home v2: editorial layout */
 .hero.h2{min-height:min(78vh,720px)}
 .shade.soft{background:linear-gradient(0deg,rgba(8,16,28,.72) 0%,rgba(8,16,28,.15) 45%,rgba(8,16,28,0) 70%)}
-.hlead{margin:0;max-width:34ch;font:600 clamp(21px,2.5vw,30px)/1.55 'Source Serif 4','Noto Serif TC',Georgia,serif;letter-spacing:.01em;color:#fff;text-wrap:balance;text-shadow:0 1px 12px rgba(0,0,0,.25)}
+.hlead{margin:0;max-width:34ch;font:600 clamp(21px,2.5vw,30px)/1.55 'Source Serif 4','Songti TC','PMingLiU','Noto Serif TC',Georgia,serif;letter-spacing:.01em;color:#fff;text-wrap:balance;text-shadow:0 1px 12px rgba(0,0,0,.25)}
 .site[data-lang="zh"] .hlead{letter-spacing:.08em;line-height:1.7}
 .hmsg{display:grid;grid-template-columns:5fr 7fr;gap:64px;align-items:start}
 .hquote{margin:0;font:700 clamp(28px,3.4vw,44px)/1.25 var(--f-display);letter-spacing:-.01em;text-wrap:balance;padding-top:18px;border-top:2px solid var(--ink)}
@@ -320,7 +320,7 @@ ol.chain li.us .stg,ol.chain li.us b{color:#fff}
 @media (max-width:480px){.hfacts{grid-template-columns:1fr}.hfacts div+div{border-left:0;padding-left:0}}
 /* Home: serif heading to match the hero line */
 .site[data-lang="zh"] .hlead,.site[data-lang="ja"] .hlead{max-width:28em}
-.hquote{font-family:'Source Serif 4','Noto Serif TC',Georgia,serif;font-weight:600;letter-spacing:0}
+.hquote{font-family:'Source Serif 4','Songti TC','PMingLiU','Noto Serif TC',Georgia,serif;font-weight:600;letter-spacing:0}
 
 /* v0.4.1 management policy: text-only, three principles in a row */
 .policy .big{max-width:46ch}
@@ -343,3 +343,5 @@ form .btn.fsend{grid-column:1/-1;justify-self:end;align-self:auto;padding:9px 22
 
 /* about: multi-paragraph president message */
 p.big:has(+ p.big){margin-bottom:16px}
+
+.fnote-form{margin:0;font-size:13.5px;line-height:1.6;color:var(--muted)}
