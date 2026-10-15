@@ -3,17 +3,17 @@
   --bg:#FFFFFF; --alt:#F3F5F7; --surface:#FFFFFF; --sunk:#E7EBEF;
   --ink:#0C1623; --muted:#5B6672; --line:#D5DBE2;
   --blue:#145BDB; --blue-ink:#0E47B0; --warn:#9A5B00;
-  --navy:#101E2E; --on-dark:#F3F5F7; --on-dark-muted:#A9B5C2; --flux:#8DB7FF;
+  --red:#D23C2A; --navy:#101E2E; --on-dark:#F3F5F7; --on-dark-muted:#A9B5C2; --flux:#8DB7FF;
   --f-display:'Manrope','PingFang TC','Microsoft JhengHei','Noto Sans TC',system-ui,sans-serif;
   --f-body:'DM Sans','PingFang TC','Microsoft JhengHei','Noto Sans TC',system-ui,sans-serif;
   --f-mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#0B121B; --alt:#101A26; --surface:#131E2B; --sunk:#1A2636; --ink:#E8EDF3; --muted:#9AA7B5; --line:#26364A;
-  --blue:#6FA0FF; --blue-ink:#8DB7FF; --warn:#E5A84B; --navy:#070D15; color-scheme:dark}}
+  --blue:#6FA0FF; --blue-ink:#8DB7FF; --warn:#E5A84B; --red:#FF7A66; --navy:#070D15; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0B121B; --alt:#101A26; --surface:#131E2B; --sunk:#1A2636; --ink:#E8EDF3; --muted:#9AA7B5; --line:#26364A;
-  --blue:#6FA0FF; --blue-ink:#8DB7FF; --warn:#E5A84B; --navy:#070D15; color-scheme:dark}
+  --blue:#6FA0FF; --blue-ink:#8DB7FF; --warn:#E5A84B; --red:#FF7A66; --navy:#070D15; color-scheme:dark}
 *{box-sizing:border-box}
 html,body{margin:0}
 body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.7}
@@ -44,8 +44,11 @@ p{margin:0}
 /* header */
 header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
 .bar{display:flex;align-items:center;gap:28px;height:68px}
-.brand{display:flex;align-items:baseline;gap:8px;font:800 20px var(--f-display);letter-spacing:.05em;color:var(--ink);text-decoration:none}
-.brand small{font:400 11px var(--f-mono);letter-spacing:.12em;color:var(--muted)}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none}
+.brand .mark{width:32px;height:32px;flex:none}
+.brand .dot{fill:var(--red)}
+.brand .wm{display:flex;flex-direction:column;font:800 22px/1 var(--f-display);letter-spacing:.06em}
+.brand small{font:500 8.5px/1 var(--f-mono);letter-spacing:.16em;color:var(--muted);margin-top:4px}
 nav.links{display:flex;gap:26px;margin-left:auto;font-weight:600;font-size:15px}
 nav.links a{color:var(--ink);text-decoration:none;padding-block:22px;border-bottom:3px solid transparent}
 nav.links a:hover{color:var(--blue)}
@@ -185,6 +188,8 @@ img.thumb{width:72px;height:54px;object-fit:cover}
 .foot{background:var(--navy);color:var(--on-dark-muted);padding-block:56px 32px;font-size:14px}
 .foot a{color:var(--on-dark);text-decoration:none}
 .foot .brand,.foot .brand small{color:var(--on-dark)}
+.foot .brand .dot{fill:#FF7A66}
+.foot .brand small{color:var(--on-dark-muted)}
 .fgrid{display:grid;grid-template-columns:1.2fr 1fr 2fr;gap:40px}
 .fgrid > *{min-width:0}
 .ftag{margin-top:12px;max-width:34ch}
@@ -345,3 +350,7 @@ form .btn.fsend{grid-column:1/-1;justify-self:end;align-self:auto;padding:9px 22
 p.big:has(+ p.big){margin-bottom:16px}
 
 .fnote-form{margin:0;font-size:13.5px;line-height:1.6;color:var(--muted)}
+
+/* EVER brand book v1.0: 圓 E field texture over photo heroes */
+.efield{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.5;mix-blend-mode:screen}
+.hero .pin,.phero .pin{position:relative;z-index:1}
